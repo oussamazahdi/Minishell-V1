@@ -6,7 +6,7 @@
 /*   By: ozahdi <ozahdi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 13:03:09 by ozahdi            #+#    #+#             */
-/*   Updated: 2024/08/06 10:31:44 by ozahdi           ###   ########.fr       */
+/*   Updated: 2024/08/06 12:06:25 by ozahdi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,28 @@ typedef struct s_data
 	int			*fd_heredoc;
 }			t_data;
 
+
+//ft_fill_token.c
+int ft_fill_token(t_list **token, char *read);
+//ft_parsing.c : 1 & 2
+int	ft_parsing(char *read);
+int	chech_quotes(char *read);
+//ft_split.c
+char	**ft_split(char *s, char c);
+//ft_strtrim.c
+char	*ft_strtrim(char *s1, char *set);
+//tools.c : 1, 2 & 3
+char	*ft_strdup(char *s);
+int	ft_strlen(char *s);
+char	*ft_substr(char *s, int start, int len);
+char *ft_chifr(char *read);
+int	ft_is_syntax(int c);
+int ft_remove_spaces2(char *read);
+char	*ft_remove_spaces(char *read);
+int	ft_strcomp(char *src, char *cmp);
+t_list	*ft_lstnew(char *content);
+t_list	*ft_lstlast(t_list *lst);
+void	ft_lstadd_back(t_list **lst, char *content);
+char	*ft_addspace(char *read);
 
 #endif

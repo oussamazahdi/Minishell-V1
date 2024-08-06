@@ -6,13 +6,13 @@
 /*   By: ozahdi <ozahdi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 10:52:55 by ozahdi            #+#    #+#             */
-/*   Updated: 2024/08/06 10:53:09 by ozahdi           ###   ########.fr       */
+/*   Updated: 2024/08/06 12:03:30 by ozahdi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-static int	chech_quotes(char *read)
+int	chech_quotes(char *read)
 {
 	int		i;
 	int		k;
