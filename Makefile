@@ -1,6 +1,6 @@
 CC			=	cc
 NAME		=	minishell
-CFLAGS		=	-Wall -Wextra -Werror
+# CFLAGS		=	-Wall -Wextra -Werror
 LIBRARY		=	-lreadline
 LDFLAGS		=	"-L/Users/$(USER)/.brew/opt/readline/lib"
 CPPFLAGS	=	"-I/Users/$(USER)/.brew/opt/readline/include"

@@ -6,7 +6,7 @@
 /*   By: ozahdi <ozahdi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 11:00:08 by ozahdi            #+#    #+#             */
-/*   Updated: 2024/08/06 11:49:05 by ozahdi           ###   ########.fr       */
+/*   Updated: 2024/08/06 12:01:21 by ozahdi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static t_list	*ft_create_token(t_list **token, char *read)
 	char		**ptr;
 	int			i;
 
-	ptr = ft_split(read, '|');
+	ptr = ft_split(read, ' ');
 	i = 0;
 	while (ptr[i])
 	{
