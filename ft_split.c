@@ -6,11 +6,11 @@
 /*   By: ozahdi <ozahdi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 12:14:27 by ozahdi            #+#    #+#             */
-/*   Updated: 2024/06/20 16:21:43 by ozahdi           ###   ########.fr       */
+/*   Updated: 2024/08/06 12:09:33 by ozahdi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Minishell.h"
+#include "minishell.h"
 
 static int	ft_wordcounter(const char *str, char c)
 {

@@ -1,6 +1,6 @@
 CC			=	cc
 NAME		=	minishell
-# CFLAGS		=	-Wall -Wextra -Werror
+#CFLAGS		=	-Wall -Wextra -Werror
 LIBRARY		=	-lreadline
 LDFLAGS		=	"-L/Users/$(USER)/.brew/opt/readline/lib"
 CPPFLAGS	=	"-I/Users/$(USER)/.brew/opt/readline/include"
@@ -11,7 +11,7 @@ SRC			=	ft_fill_token.c ft_parsing.c ft_parsing2.c\
 
 OBJS		=	$(SRC:.c=.o)
 
-all			=	$(NAME)
+all			:	$(NAME)
 
 $(NAME)		:	$(OBJS)
 			@$(CC) $(LIBRARY) $(LDFLAGS) $(CPPFLAGS) $(FLAGS) -o $(NAME) $(OBJS)
@@ -25,6 +25,6 @@ clean		:
 fclean		:	clean
 			@rm -f $(NAME)
 
-re			: fclean all
+re			:	fclean all
 
 .PHONY		:	clean

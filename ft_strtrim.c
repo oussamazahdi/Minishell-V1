@@ -6,11 +6,11 @@
 /*   By: ozahdi <ozahdi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 13:30:00 by ozahdi            #+#    #+#             */
-/*   Updated: 2024/08/06 10:06:07 by ozahdi           ###   ########.fr       */
+/*   Updated: 2024/08/06 12:09:40 by ozahdi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Minishell.h"
+#include "minishell.h"
 
 static char	*ft_strchr(char *s, int c)
 {

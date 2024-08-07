@@ -6,7 +6,7 @@
 /*   By: ozahdi <ozahdi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 10:04:16 by ozahdi            #+#    #+#             */
-/*   Updated: 2024/08/06 11:22:10 by ozahdi           ###   ########.fr       */
+/*   Updated: 2024/08/07 18:13:53 by ozahdi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,11 +79,14 @@ char *ft_chifr(char *read)
 	i = 0;
 	while (read[i])
 	{
-		while (read[i] != '"' && read[i] != 39)
+		while (read[i] && read[i] != '"' && read[i] != 39)
 			i++;
-		if (read[i] == '"')
+		if(i == ft_strlen(read))
+			return (read);
+		if (read[i] && read[i] == '"')
 		{
-			while (read[++i] != '"')
+			i++;
+			while (read[i] && read[i] != '"')
 			{
 				if (read[i] == '\\')
 				{
@@ -92,12 +95,14 @@ char *ft_chifr(char *read)
 				}
 				if (read[i] > 0)
 					read[i] *= -1;
+				i++;
 			}
 			i++;
 		}
-		if (read[i] == 39)
+		if (read[i] && read[i] == 39)
 		{
-			while (read[++i] != 39)
+			i++;
+			while (read[i] && read[i] != 39)
 			{
 				if (read[i] == '\\')
 				{
@@ -106,6 +111,7 @@ char *ft_chifr(char *read)
 				}
 				if (read[i] > 0)
 					read[i] *= -1;
+				i++;
 			}
 			i++;
 		}

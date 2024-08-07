@@ -6,20 +6,11 @@
 /*   By: ozahdi <ozahdi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 13:55:01 by ozahdi            #+#    #+#             */
-/*   Updated: 2024/08/06 10:59:50 by ozahdi           ###   ########.fr       */
+/*   Updated: 2024/08/07 18:14:27 by ozahdi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
-
-static void ft_initialises(t_data **line)
-{
-	t_data	*tmp;
-
-	tmp = (*line);
-	tmp = NULL;
-	tmp->token = NULL;
-}
 
 static void	ft_exit(char *read)
 {
@@ -30,7 +21,7 @@ static void	ft_exit(char *read)
 	}
 }
 
-static void ft_readline(t_data **line, t_list **token)
+static void ft_readline(t_data **line)
 {
 	char	*read;
 	
@@ -40,9 +31,11 @@ static void ft_readline(t_data **line, t_list **token)
 		add_history(read);
 	read = ft_strtrim(read, " \t\n");
 	read = ft_chifr(read);
+	printf("read : %s\n", read);
 	if (ft_parsing(read))
 	{
-		ft_fill_token(token);
+		ft_fill_token(line, read);
+		printf("******************\n");
 	}
 }
 
@@ -52,9 +45,10 @@ int	main(int ac, char **av, char **env)
 
 	if (ac != 1)
 		return (1);
-	ft_initialises(&line);
+	line = malloc(sizeof(t_data));
+	// line = malloc(sizeof(t_data));
 	while (1)
 	{
-		ft_readline(&line, &line->token);
+		ft_readline(&line);
 	}
 }

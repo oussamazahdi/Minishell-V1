@@ -6,7 +6,7 @@
 /*   By: ozahdi <ozahdi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 11:03:02 by ozahdi            #+#    #+#             */
-/*   Updated: 2024/08/06 11:44:06 by ozahdi           ###   ########.fr       */
+/*   Updated: 2024/08/07 17:34:13 by ozahdi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,31 +24,28 @@ t_list	*ft_lstnew(char *content)
 	return (ptr);
 }
 
-t_list	*ft_lstlast(t_list *lst)
-{
-	t_list	*tmp;
-
-	tmp = lst;
-	if (tmp == NULL)
-		return (NULL);
-	while (tmp->next)
-		tmp = tmp->next;
-	return (tmp);
-}
-
-void	ft_lstadd_back(t_list **lst, char *content)
+t_list	*ft_lstadd_back(t_list *lst, char *ptr)
 {
 	t_list	*tmp;
 	t_list	*new;
+	int		i;
 
-	tmp = (*lst);
-	new = ft_lstnew(content);
-	if (!lst || !new)
-		return ;
-	if (tmp)
-		ft_lstlast(tmp)->next = new;
-	else
+	if (!lst)
+		return (NULL);
+	tmp = lst;
+	new = ft_lstnew(ptr);
+	if (!new)
+		return (NULL);
+	if (!tmp)
 		tmp = new;
+	else
+	{
+		while (tmp->next)
+			tmp = tmp->next;
+		tmp->next = new;
+		new->next = NULL;
+	}
+	return (lst);
 }
 
 static char	*ft_space(char *read, char *ptr)
