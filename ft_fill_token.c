@@ -6,7 +6,7 @@
 /*   By: ozahdi <ozahdi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 11:00:08 by ozahdi            #+#    #+#             */
-/*   Updated: 2024/08/07 18:18:31 by ozahdi           ###   ########.fr       */
+/*   Updated: 2024/08/07 19:18:49 by ozahdi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,10 @@ static t_data	*ft_create_token(t_data **line, char *read)
 	i = 0;
 	while (ptr[i])
 	{
+		printf("ptr[%d] : %s\n", i, ptr[i]);
+		printf("+++++++++++++++++++++++\n");
 		ft_lstadd_back(token, ptr[i]);
-		// printf("+++++++++++++++++++++++\n");
+		printf("token : %s\n", token->content);
 		if (!token)
 			return (NULL);
 		i++;
@@ -46,5 +48,5 @@ int ft_fill_token(t_data **line, char *read)
 		printf(BOLD RED "token is empty! (ft_fill token)\n" RESET);
 		return (0);
 	}
-	printf("token[0] (ft_fill token) : %s\n", (*line)->token->content);
+	// printf("token[0] (ft_fill token) : %s\n", (*line)->token->content);
 }
