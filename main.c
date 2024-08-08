@@ -6,7 +6,7 @@
 /*   By: ozahdi <ozahdi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 13:55:01 by ozahdi            #+#    #+#             */
-/*   Updated: 2024/08/08 10:21:31 by ozahdi           ###   ########.fr       */
+/*   Updated: 2024/08/08 13:05:26 by ozahdi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ static void ft_readline(t_data **line)
 	if (ft_parsing(read))
 	{
 		ft_fill_token(line, read);
+		ft_lexer(line);
 		ft_print_foken((*line)->token);
 	}
 }

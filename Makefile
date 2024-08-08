@@ -7,7 +7,7 @@ CPPFLAGS	=	"-I/Users/$(USER)/.brew/opt/readline/include"
 
 SRC			=	ft_fill_token.c ft_parsing.c ft_parsing2.c\
 				ft_split.c ft_strtrim.c main.c tools1.c\
-				tools2.c tools3.c\
+				tools2.c tools3.c ft_lexer.c\
 
 OBJS		=	$(SRC:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: ozahdi <ozahdi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 13:03:09 by ozahdi            #+#    #+#             */
-/*   Updated: 2024/08/07 17:39:20 by ozahdi           ###   ########.fr       */
+/*   Updated: 2024/08/08 13:03:38 by ozahdi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,8 @@ int	ft_strcomp(char *src, char *cmp);
 t_list	*ft_lstnew(char *content);
 t_list	*ft_lstadd_back(t_list *lst, char *ptr);
 char	*ft_addspace(char *read);
+
+//lexer.c
+int *ft_lexer(t_data **line);
 
 #endif
