@@ -6,7 +6,7 @@
 /*   By: ozahdi <ozahdi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 13:55:01 by ozahdi            #+#    #+#             */
-/*   Updated: 2024/08/08 09:41:18 by ozahdi           ###   ########.fr       */
+/*   Updated: 2024/08/08 10:21:31 by ozahdi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void ft_print_foken(t_list *token)
 	t_list *tmp;
 	int i = 0;
 
+	tmp = token;
 	while (tmp)
 	{
 		printf(ORANGE"token[%d]	: %s\n"RESET, i,tmp->content);
