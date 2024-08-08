@@ -6,7 +6,7 @@
 /*   By: ozahdi <ozahdi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 11:03:02 by ozahdi            #+#    #+#             */
-/*   Updated: 2024/08/07 19:21:26 by ozahdi           ###   ########.fr       */
+/*   Updated: 2024/08/08 09:33:35 by ozahdi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ t_list	*ft_lstnew(char *content)
 		return (NULL);
 	ptr -> content = content;
 	ptr -> next = NULL;
-	printf("ptr : %s\n", ptr->content);
 	return (ptr);
 }
 
@@ -35,12 +34,10 @@ t_list	*ft_lstadd_back(t_list *lst, char *ptr)
 	// 	return (NULL);
 	tmp = lst;
 	new = ft_lstnew(ptr);
-	printf("+++++++++++++\n");
-	printf("new : %s\n", new->content);
 	if (!new)
 		return (NULL);
 	if (!tmp)
-		tmp = new;
+		lst = new;
 	else
 	{
 		while (tmp->next)

@@ -6,7 +6,7 @@
 /*   By: ozahdi <ozahdi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 11:00:08 by ozahdi            #+#    #+#             */
-/*   Updated: 2024/08/07 19:18:49 by ozahdi           ###   ########.fr       */
+/*   Updated: 2024/08/08 09:53:29 by ozahdi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,11 @@ static t_data	*ft_create_token(t_data **line, char *read)
 
 	ptr = ft_split(read, ' ');
 	i = 0;
+	(*line)->token = NULL;
 	while (ptr[i])
 	{
-		printf("ptr[%d] : %s\n", i, ptr[i]);
-		printf("+++++++++++++++++++++++\n");
-		ft_lstadd_back(token, ptr[i]);
-		printf("token : %s\n", token->content);
-		if (!token)
+		(*line)->token = ft_lstadd_back((*line)->token, ptr[i]);
+		if (!(*line)->token)
 			return (NULL);
 		i++;
 	}
@@ -41,12 +39,12 @@ int ft_fill_token(t_data **line, char *read)
 	tmp = (*line);
 	read = ft_addspace(read);
 	// printf("read (ft_fill token) : %s\n", read);
-	tmp = ft_create_token(line, read);
-	// printf("9999999999999999\n");
+	ft_create_token(line, read);
+	printf("tmp : %s\n", tmp->token->content);
 	if (!line)
 	{
 		printf(BOLD RED "token is empty! (ft_fill token)\n" RESET);
 		return (0);
 	}
-	// printf("token[0] (ft_fill token) : %s\n", (*line)->token->content);
+	printf("token[0] (ft_fill token) : %s\n", tmp->token->content);
 }
