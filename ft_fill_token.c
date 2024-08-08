@@ -6,7 +6,7 @@
 /*   By: ozahdi <ozahdi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 11:00:08 by ozahdi            #+#    #+#             */
-/*   Updated: 2024/08/08 09:53:29 by ozahdi           ###   ########.fr       */
+/*   Updated: 2024/08/08 09:58:34 by ozahdi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static t_data	*ft_create_token(t_data **line, char *read)
 			return (NULL);
 		i++;
 	}
-	(*line)->token = token;
+	// (*line)->token = token;
 	return (*line);
 }
 
