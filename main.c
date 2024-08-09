@@ -6,7 +6,7 @@
 /*   By: ozahdi <ozahdi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 13:55:01 by ozahdi            #+#    #+#             */
-/*   Updated: 2024/08/09 11:18:06 by ozahdi           ###   ########.fr       */
+/*   Updated: 2024/08/09 12:18:29 by ozahdi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ static void ft_readline(t_data **line)
 		ft_fill_token(line, read);
 		ft_lexer(line);
 		ft_print_token((*line)->token);
-		printf("process_count	: %d\n", (*line)->process_count);
-		printf("builtin_check	: %d\n", (*line)->builtin_check);
+		printf(BOLD GREEN"process_count	: %d\n"RESET, (*line)->process_count);
+		printf(BOLD YELLOW"builtin_check	: %d\n"RESET, (*line)->builtin_check);
 	}
 }
 

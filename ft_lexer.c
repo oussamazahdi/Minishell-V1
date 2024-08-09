@@ -6,7 +6,7 @@
 /*   By: ozahdi <ozahdi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 10:31:56 by ozahdi            #+#    #+#             */
-/*   Updated: 2024/08/09 12:12:53 by ozahdi           ###   ########.fr       */
+/*   Updated: 2024/08/09 12:17:28 by ozahdi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,92 +40,6 @@ int ft_token_size(t_list *token)
 	return (i);
 }
 
-// int *ft_init(int *lexer, int size)
-// {
-// 	int len;
-	
-// 	len = size - 1;
-// 	while(len != -5)
-// 		lexer[len--] = ARG;
-// 	return lexer;
-// }
-
-// int *ft_token_p1(t_data **line, int size)
-// {
-// 	t_list	*tmp;
-// 	int i = 0;
-
-// 	tmp = (*line)->token;
-// 	while (tmp)
-// 	{
-// 		if (tmp->content[0] == '|' && ft_strlen(tmp->content) == 1)
-// 			(*line)->lexer[i++] = PIPE;
-// 		else if (tmp->content[0] == '>' && ft_strlen(tmp->content) == 1)
-// 		{
-// 			(*line)->lexer[i++] = OUTFILE;
-// 			tmp = tmp->next;
-// 			(*line)->lexer[i] = OUTFILE;
-// 		}
-// 		else if (tmp->content[0] == '<' && ft_strlen(tmp->content) == 1)
-// 		{
-// 			(*line)->lexer[i++] = INFILE;
-// 			tmp = tmp->next;
-// 			(*line)->lexer[i] = INFILE;
-// 		}
-// 		else if (tmp->content[0] == '>' && ft_strlen(tmp->content) == 2)
-// 		{
-// 			(*line)->lexer[i++] = APPEND;
-// 			tmp = tmp->next;
-// 			(*line)->lexer[i] = APPEND;
-// 		}
-// 		else if (tmp->content[0] == '<' && ft_strlen(tmp->content) == 2)
-// 		{
-// 			(*line)->lexer[i++] = HEREDOC;
-// 			tmp = tmp->next;
-// 			(*line)->lexer[i] = HEREDOC;
-// 		}
-// 		tmp = tmp->next;
-// 		i++;
-// 	}
-// 	return ((*line)->lexer);
-// }
-
-// void ft_pars_token(t_list *token)
-// {
-// 	t_list *tmp;
-
-// 	tmp = token;
-// 	while (tmp)
-// 	{
-// 		if (tmp->content[0] == '|')
-// 			tmp->type = PIPE;
-// 		else if (tmp->content[0] == '>' && ft_strlen(tmp->content) == 1)
-// 		{
-// 			tmp = tmp->next;
-// 			tmp->type = OUTFILE;
-// 		}
-// 		else if (tmp->content[0] == '<' && ft_strlen(tmp->content) == 1)
-// 		{
-// 			tmp = tmp->next;
-// 			tmp->type = INFILE;
-// 		}
-// 		else if (tmp->content[0] == '<' && ft_strlen(tmp->content) == 2)
-// 		{
-// 			tmp = tmp->next;
-// 			tmp->type = HEREDOC;
-// 		}
-// 		else if (tmp->content[0] == '>' && ft_strlen(tmp->content) == 2)
-// 		{
-// 			tmp = tmp->next;
-// 			tmp->type = APPEND;
-// 		}
-// 		tmp = tmp->next;
-// 	}
-// 	tmp = token;
-	
-		
-// }
-
 void ft_fill_lexer(t_data **line, int size)
 {
 	t_list	*tmp;
@@ -151,6 +65,6 @@ int *ft_lexer(t_data **line)
 	size = ft_token_size((*line)->token);
 	(*line)->lexer = malloc(size * sizeof(int));
 	ft_fill_lexer(line, size);
-	ft_print_lexer((*line)->lexer, size);
+	// ft_print_lexer((*line)->lexer, size);
 	return ((*line)->lexer);
 }
