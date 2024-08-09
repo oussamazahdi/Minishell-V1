@@ -6,7 +6,7 @@
 /*   By: ozahdi <ozahdi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 13:03:09 by ozahdi            #+#    #+#             */
-/*   Updated: 2024/08/08 13:03:38 by ozahdi           ###   ########.fr       */
+/*   Updated: 2024/08/09 11:06:26 by ozahdi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ typedef enum    e_lexeme
 typedef struct s_list
 {
 	char			*content;
+	int				type;
 	struct s_list	*next;
 }	t_list;
 
@@ -88,8 +89,14 @@ int	ft_strcomp(char *src, char *cmp);
 t_list	*ft_lstnew(char *content);
 t_list	*ft_lstadd_back(t_list *lst, char *ptr);
 char	*ft_addspace(char *read);
+int	ft_compare(char *s1, char *s2);
 
 //lexer.c
 int *ft_lexer(t_data **line);
+
+
+
+void ft_print_lexer(int *lexer, int size);
+void ft_print_token(t_list *token);
 
 #endif

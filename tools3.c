@@ -6,7 +6,7 @@
 /*   By: ozahdi <ozahdi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 11:03:02 by ozahdi            #+#    #+#             */
-/*   Updated: 2024/08/08 09:33:35 by ozahdi           ###   ########.fr       */
+/*   Updated: 2024/08/09 11:27:48 by ozahdi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_list	*ft_lstnew(char *content)
 	if (!ptr)
 		return (NULL);
 	ptr -> content = content;
+	ptr -> type = -1;
 	ptr -> next = NULL;
 	return (ptr);
 }
@@ -87,4 +88,24 @@ char	*ft_addspace(char *read)
 	ptr = malloc(i + (k * 2) + 1);
 	ptr = ft_space(read, ptr);
 	return (ptr);
+}
+
+int	ft_compare(char *s1, char *s2)
+{
+	int		i;
+	int		j;
+
+	i = 0;
+	j = 0;
+	if(!s1 || !s2)
+		return (0);
+	while (s1[i])
+	{
+		if (ft_strlen(s1) != ft_strlen(s2) || (!s2[i] && s1[i]) || (s1[i] != s2[i]))
+			return (0);
+		i++;
+	}
+	if (!s1[i] && s2[i])
+		return (0);
+	return (1);
 }
